@@ -1,3 +1,5 @@
+![Project Image](https://github.com/yeswadams/sendsms.apibyafricastalking/blob/main/httpsdev-to-uploads.s3.amazonaws.png)
+
 # Sending SMS with Africa's Talking API
 This project is a Node.js application that demonstrates how to send SMS messages using the Africa's Talking API. It also sets up a simple SMS server to handle incoming messages via a webhook.
 
