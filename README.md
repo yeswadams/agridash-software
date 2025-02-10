@@ -26,3 +26,57 @@ To start the application, run:
 
 ```bash
 node index.js
+const sendSMS = require('./sendSMS');
+const smsServer = require('./smsServer');
+
+// Call the sendSMS function to send an SMS
+sendSMS();
+
+// Start the SMS server to listen for incoming messages
+smsServer();
+
+```
+
+```bash
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+// Incoming messages route
+app.post('/incoming-messages', (req, res) => {
+    const data = req.body;
+    console.log(`Received message \n ${JSON.stringify(data, null, 2)}`);
+    res.sendStatus(200);
+});
+
+module.exports = function smsServer() {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`SMS Server is listening on port ${PORT}`);
+    });
+};
+
+```
+
+```bash 
+sendSMS.js
+Contains the logic to send an SMS using Africa's Talking API.
+
+```
+## Contact
+For any questions or feedback, please open an issue in the repository or reach out directly at yeswaadams73@gmail.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
