@@ -9,63 +9,7 @@ Prerequisites
 Node.js (v12 or higher recommended)
 npm (comes with Node.js) or Yarn
 An Africa's Talking account with API credentials (sandbox or production)
-Installation
-Clone the repository:
 
-bash
-Copy
-Edit
-git clone <repository-url>
-cd <repository-folder>
-Install dependencies:
-
-bash
-Copy
-Edit
-npm install
-Configuration
-For demonstration purposes, the API key and username are hard-coded in the sendSMS.js file. For production, it's best to store sensitive information like these in environment variables.
-
-To use environment variables, follow these steps:
-
-Install dotenv:
-
-bash
-Copy
-Edit
-npm install dotenv
-Create a .env file in the root directory of your project and add your credentials:
-
-dotenv
-Copy
-Edit
-AT_API_KEY=your_api_key_here
-AT_USERNAME=your_username_here
-Update sendSMS.js to use the environment variables:
-
-js
-Copy
-Edit
-require('dotenv').config();
-const AfricasTalking = require('africastalking');
-
-const africastalking = AfricasTalking({
-    apikey: process.env.AT_API_KEY,
-    username: process.env.AT_USERNAME,
-});
-
-module.exports = async function sendSMS() {
-    try {
-        const result = await africastalking.SMS.send({
-            to: '0740803075', // Adjust the phone number format if necessary
-            message: 'Hey AT Ninja! Wassup...',
-            from: '6741'      // Ensure this is your valid sender ID/shortcode
-        });
-        console.log(result);
-    } catch (ex) {
-        console.error(ex);
-    }
-};
 Usage
 Running the Application
 The application consists of three main files:
