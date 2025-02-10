@@ -1,4 +1,4 @@
-Sending SMS with Africa's Talking API
+# Sending SMS with Africa's Talking API
 This project is a Node.js application that demonstrates how to send SMS messages using the Africa's Talking API. It also sets up a simple SMS server to handle incoming messages via a webhook.
 
 Features
